@@ -1,0 +1,42 @@
+/*Определить дополнительный массив разрешенных значений. Составить массив из элементов исходного массива, имеющих неразрешенные значения. Вывести результативный массив на экран.*/
+package com.company;
+import java.util.Arrays;
+public class Main {
+    public  static void   printArray(int[] arr){
+        for (var item:arr) {
+            System.out.println(item);
+        }
+    }
+    public  static  void copyArray(int[] arr1, int[] arr2){
+        for (int i=0;i<arr1.length;i++){
+            arr2[i]=arr1[i];
+        }
+    }
+    public static void main(String[] args) {
+        int n=20;
+        int[] arrRazr={8,9,10,11};
+        int[] arr=new int[n];
+        for (int i=0;i<n;i++){
+            arr[i]= (int) (Math.random() *  20);
+        }
+        printArray(arr);
+        int[] arrAuxiliary=new int[0];
+        for (int i=0;i<arr.length;i++){
+            boolean isAllowed=false;
+            for (int j=0;j<arrRazr.length;j++){
+                if (arr[i]==arrRazr[j]){
+                    isAllowed=true;
+                    break;
+                }
+            }
+            if (!isAllowed) {
+                int[] arrCopy=arrAuxiliary;
+                arrAuxiliary=new int[arrCopy.length+1];
+                copyArray(arrCopy,arrAuxiliary);
+                arrAuxiliary[arrAuxiliary.length-1]=arr[i];
+            }
+        }
+        System.out.println();
+        printArray(arrAuxiliary);
+    }
+}
