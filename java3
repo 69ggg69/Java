@@ -1,0 +1,90 @@
+/*Создать программу на языке Java для определения класса в некоторой предметной
+области. Описать свойства, конструктор, методы геттеры/сеттеры, перекрыть метод toString()
+для вывода полной инофрмации об объекте в отформатированном виде
+Commodity - товар:
+Свойства:
+id - идентификатор;
+productCode - Код товара;
+name - Наименование;
+description - Описание
+wholesalePrice - Оптовая цена;
+retailPrice - Розничная цена;*/
+
+package com.company.Commodity;
+import java.lang.String;
+class test {
+    public static void main(String[] args) {
+        Commodity box = new Commodity(1001, 88, "Box", "Is very good box for cats", 7.8, 11.8);
+        System.out.println(box.toString());
+    }
+}
+class Commodity {
+    private int id;
+    private int productCode;
+    private String name;
+    private String description;
+    private double wholesalePrice;
+    private double retailPrice;
+
+    public Commodity(int id, int productCode, String name, String description, double wholesalePrice, double retailPrice) {
+        this.id = id;
+        this.productCode = productCode;
+        this.name = name;
+        this.description = description;
+        this.wholesalePrice = wholesalePrice;
+        this.retailPrice = retailPrice;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getProductCode() {
+        return productCode;
+    }
+
+    public void setProductCode(int productCode) {
+        this.productCode = productCode;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public double getWholesalePrice() {
+        return wholesalePrice;
+    }
+
+    public void setWholesalePrice(double wholesalePrice) {
+        this.wholesalePrice = wholesalePrice;
+    }
+
+    public double getRetailPrice() {
+        return retailPrice;
+    }
+
+    public void setRetailPrice(double retailPrice) {
+        this.retailPrice = retailPrice;
+    }
+
+    public String toString() {
+        return "Identificator" + " " + id + "\n" + "Cod tovara" + " " + productCode + "\n" + "Naimenovanie" + " " + name + "\n" + "Opisanie" + " " + description + "\n" + "Optovaya cena" + " " + wholesalePrice + "\n" + "Roznichaya cena" + " " + retailPrice;
+    }
+}
+
